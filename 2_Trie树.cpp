@@ -23,17 +23,17 @@ void  insert_word(int start,const char* str,TrieNode* current) {
   insert_word(start+1, str, &(current->son[str[start]-'a']));
 }
 
-void query_word(int start,const char* str,TrieNode* current){
+int query_word(int start,const char* str,TrieNode* current){
   if(current->son==NULL)
-    std::cout << "0" << std::endl;
+    return 0;
   if(str[start+1]=='\0'){
-    std::cout << current->son[str[start]-'a'].count_1 << std::endl;
+    return current->son[str[start]-'a'].count_1;
   }else{
     return query_word(start+1, str, &(current->son[str[start]-'a']));
   }
 }
 
-int main(int argc, char const *argv[]) {
+int main() {
   int n;
   char str[1000];
   cin>>n;
@@ -47,7 +47,7 @@ int main(int argc, char const *argv[]) {
   cin>>m;
   for(int i=0;i<m;i++){
     scanf("%s", str);
-    query_word(0, str, root);
+    printf("%d\n",query_word(0, str, root));
   }
 
   return 0;
