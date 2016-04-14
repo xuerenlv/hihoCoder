@@ -2,13 +2,14 @@
 #include<vector>
 using namespace std;
 
+
 int main(int argc,char **argv){
+  int n;
+  cin>>n;
 
-  std::vector<int> v;
+  int ar[n];
 
-  v.push_back(9);
-  int i;
-  int xx;
+  std::cout << ar[0] << std::endl;
 
   return 0;
 }
