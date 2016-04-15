@@ -4,12 +4,9 @@ using namespace std;
 
 
 int main(int argc,char **argv){
-  int n;
-  cin>>n;
 
-  int ar[n];
-
-  std::cout << ar[0] << std::endl;
+  int* max =&10;
+  std::cout << *max << std::endl;
 
   return 0;
 }
