@@ -16,32 +16,32 @@ int strCount(const char *haystack, const char *needle) {
         next[0] = -1;
         i = 1;
         while (i < lenN) {
-            while (j >= 0 && needle[i] != needle[j+1]) j = next[j];
-            if (needle[i] == needle[j+1]) j++;
-            next[i] = j;
-            i++;
+                while (j >= 0 && needle[i] != needle[j+1]) j = next[j];
+                if (needle[i] == needle[j+1]) j++;
+                next[i] = j;
+                i++;
         }
 
         i = 0;
         j = -1;
         while (i < lenH) {
-            while (j >= 0 && haystack[i] != needle[j+1]) j = next[j];
-            if (haystack[i] == needle[j+1]) j++;
-            if (j + 1 == lenN) ct++;
-            i++;
+                while (j >= 0 && haystack[i] != needle[j+1]) j = next[j];
+                if (haystack[i] == needle[j+1]) j++;
+                if (j + 1 == lenN) ct++;
+                i++;
         }
         return ct;
 }
 
 
 int main() {
-    int T;
-    cin >> T;
-    while (T--) {
-        string needle, haystack;
-        cin >> needle >> haystack;
-        cout << strCount(haystack.c_str(), needle.c_str()) << endl;
-    }
-    
-    return 0;
+        int T;
+        cin >> T;
+        while (T--) {
+                string needle, haystack;
+                cin >> needle >> haystack;
+                cout << strCount(haystack.c_str(), needle.c_str()) << endl;
+        }
+
+        return 0;
 }

@@ -12,6 +12,24 @@ public class Reverse_Integer_7 {
 }
 
 class Solution_Reverse_Integer_7 {
+
+	public int reverse_others(int x)
+	{
+    int result = 0;
+
+    while (x != 0)
+    {
+        int tail = x % 10;
+        int newResult = result * 10 + tail;
+        if ((newResult - tail) / 10 != result)
+        { return 0; }
+        result = newResult;
+        x = x / 10;
+    }
+
+    return result;
+	}
+
 	public int reverse_version_2(int x) {
 		int signal;
 		signal = x > 0 ? 1 : -1;
@@ -38,7 +56,7 @@ class Solution_Reverse_Integer_7 {
 			x = x / 10;
 		}
 
-		if (!str1.equals(str2)) {
+		if (!str1.equals(str2)) { // 因为可能产生溢出，所以要进行判断
 			return 0;
 		} else {
 			return sum * signal;
