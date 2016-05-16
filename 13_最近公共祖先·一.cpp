@@ -13,6 +13,7 @@ node *find (char name[], int n, node list[]) {
     return NULL;
 }
 
+
 int main () {
 
     int n = 0;
