@@ -2,8 +2,7 @@
 using namespace std;
 
 int main(int argc,char **argv){
-    int a=1;
-    int b = ++a++;
+    char a = 'a'+1;
         std::cout << a << std::endl;
 
         return 0;
