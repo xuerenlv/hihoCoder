@@ -1,9 +1,25 @@
 #include <iostream>
 using namespace std;
 
-int main(int argc,char **argv){
-    char a = 'a'+1;
-        std::cout << a << std::endl;
 
+class CL{
+private:
+  int num;
+
+public:
+  CL(int num):num(num){}
+
+  int getNum() const{
+    return num;
+  }
+  int getNum(){
+    return num+10;
+  }
+};
+
+
+int main(int argc,char **argv){
+    CL cc(10);
+    std::cout << cc.getNum() << std::endl;
         return 0;
 }
