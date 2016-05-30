@@ -1,25 +1,18 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+#include <math.h>
 using namespace std;
 
 
-class CL{
-private:
-  int num;
+int main(int argc, char const *argv[]) {
+  string s("xhj");
 
-public:
-  CL(int num):num(num){}
+  std::cout << s << std::endl;
 
-  int getNum() const{
-    return num;
-  }
-  int getNum(){
-    return num+10;
-  }
-};
+  s.insert(1,"E");
+  std::cout << s << std::endl;
 
-
-int main(int argc,char **argv){
-    CL cc(10);
-    std::cout << cc.getNum() << std::endl;
-        return 0;
+  return 0;
 }
